@@ -1,0 +1,33 @@
+<section>
+  <!--section *ngIf="isLoading && !errorMessage">
+    Loading ...
+  </section -->
+  <!--ul-->
+    <!-- this is the new syntax for ng-repeat -->
+    <!-- li *ngFor="let person of people" -->
+      <!-- a href="#" [routerLink]="['/persons', person.id]" >
+    {{person.name}}
+    </a -->
+      <!--a href="#" >
+        {{person.name}}
+      </a>
+    </li>
+  </ul-->
+
+  <div class="container-fluid">
+    <h1>Person Data</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>UserName:{{person?.name}}</h3>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+  <!-- section *ngIf="errorMessage">
+    {{errorMessage}}
+  </section -->
+</section>

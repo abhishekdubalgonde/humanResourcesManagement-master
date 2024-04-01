@@ -1,0 +1,41 @@
+<!-- div-- class="row" style="margin-top: 12px;">
+
+
+  <div class="col-sm-6">
+    <button class="btn btn-success btn"
+            (click)="added()">
+      Add
+    </button>
+    <button class="btn btn-warning btn"
+            (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+
+</div -->
+
+
+<h3>Specify the name of the dive site:</h3>
+<div class="row">
+  <div class="col-sm-6">
+    <input #siteNameBox class="form-control input-lg" type="text"
+           placeholder="site name"
+
+           (keyup)="person.name=siteNameBox.value"
+           (keyup.enter)="addPerson()" />
+  </div>
+</div>
+
+<div class="row" style="margin-top: 12px;">
+  <div class="col-sm-6">
+    <button class="btn btn-success btn"
+            (click)="addPerson()"
+            [disabled]="!person?.name">
+      Add
+    </button>
+    <button class="btn btn-warning btn"
+            (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+
+
+<!-- people-view-details [person]="people[1]"></people-view-details -->
+
+<!-- div>
+  <people-view-details-modal #c="child"></people-view-details-modal>
+</div -->
+
+<section>
+  <section *ngIf="isLoading && !errorMessage">
+    Loading our hyperdrives!!! Retrieving data...
+  </section>
+  <!--ul-->
+    <!-- this is the new syntax for ng-repeat -->
+    <!-- li *ngFor="let person of people" -->
+      <!-- a href="#" [routerLink]="['/persons', person.id]" >
+    {{person.name}}
+    </a -->
+      <!--a href="#" >
+        {{person.name}}
+      </a>
+    </li>
+  </ul-->
+
+  <!--div class="col-sm-5">
+    <button class="btn btn-primary btn-lg"
+            [disabled]="!enableAdd()"
+            (click)="addUser()">
+      Add new user
+    </button>
+    <button class="btn btn-danger btn-lg"
+            (click)="clearUsers()">
+      Clear users
+    </button>
+  </div -->
+
+
+
+
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-8">
+      <input #searchBox class="form-control input-lg"
+             placeholder="Search"
+             (keyup)="0" />
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of people | contentFilter:searchBox.value">
+          <td>Default</td>
+          <td>Defaultson</td>
+          <td>
+            <a href="#" >
+              {{person.name}}
+            </a>
+          </td>
+          <td>def@somemail.com</td>
+          <td>
+
+            <!-- button type="button" class="btn btn-info btn-sm" (click)="c.viewPersonDetails(person)"-->
+            <button type="button" class="btn btn-info btn-sm" (click)="viewPerson(person)">
+
+                Details
+            </button>
+
+              <button class="btn btn-warning btn-sm">
+              Edit
+             </button>
+              <button class="btn btn-danger btn-sm">
+                Delete
+              </button>
+          </td>
+        </tr>
+      <tbody>
+    </table>
+  </div>
+
+  <section *ngIf="errorMessage">
+    {{errorMessage}}
+  </section>
+</section>
